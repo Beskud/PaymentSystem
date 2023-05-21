@@ -20,7 +20,6 @@ class ControllerRegistration extends Controller
                 $email = $request->email;
                 $password = $request->password;
                 $password_hash = password_hash($password, PASSWORD_DEFAULT);
-              
                 $user = User::create([
                     'name' => $username,
                     'email' => $email,

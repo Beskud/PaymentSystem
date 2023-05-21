@@ -11,39 +11,39 @@
                         <h2 class="text-uppercase text-center mb-5">Create an account</h2>
                         <form>
                             <div class="form-outline mb-4 block-input">
-                                <input name="username" type="text" id="form3Example1cg"
-                                    class="form-control form-control-lg" />
                                 <label class="form-label" for="form3Example1cg">Your Username</label>
+                                <input name="username" value="{{ old('username') }}" type="text" id="form3Example1cg"
+                                    class="form-control form-control-lg" />
                                 @if (session()->get('error.username'))
-                                    <div class="username-message">
+                                <div class="error-validation">
                                         {{ session()->get('error.username') }}
                                     </div>
                                 @endif
                             </div>
                             <div class="form-outline mb-4 block-input">
-                                <input type="email" name="email" id="form3Example3cg"
-                                    class="form-control form-control-lg" />
                                 <label class="form-label" for="form3Example3cg">Your Email</label>
+                                <input type="email" value="{{ old('email') }}" name="email" id="form3Example3cg"
+                                    class="form-control form-control-lg" />
                                 @if (session()->get('error.email'))
-                                    <div class="email-message">
+                                <div class="error-validation">
                                         {{ session()->get('error.email') }}
                                     </div>
                                 @endif
                             </div>
                             <div class="form-outline mb-4 block-input">
+                                <label class="form-label" for="form3Example4cg">Password</label>
                                 <input type="password" name="password" id="form3Example4cg"
                                     class="form-control form-control-lg" />
-                                <label class="form-label" for="form3Example4cg">Password</label>
                                 @if (session()->get('error.password'))
-                                    <div class="password-message">
+                                    <div class="error-validation">
                                         {{ session()->get('error.password') }}
                                     </div>
                                 @endif
                             </div>
                             <div class="form-outline mb-4 block-input">
+                                <label class="form-label" for="form3Example4cdg">Repeat your password</label>
                                 <input type="password" name="confirmation_password" id="form3Example4cdg"
                                     class="form-control form-control-lg" />
-                                <label class="form-label" for="form3Example4cdg">Repeat your password</label>
                                 @if (session()->get('error.confirmation_password'))
                                     <div class="confirmation-message">
                                         <div class="error-validation">

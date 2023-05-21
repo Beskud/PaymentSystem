@@ -15,18 +15,13 @@
                                       <input type="email" name="email" id="form3Example3cg"
                                           class="form-control form-control-lg" />
                                       <label class="form-label" for="form3Example3cg">Your Email</label>
-                                      @if (session()->get('error.email'))
-                                          <div class="email-message">
-                                              {{ session()->get('error.email') }}
-                                          </div>
-                                      @endif
                                   </div>
                                   <div class="form-outline mb-4 block-input">
                                       <input type="password" name="password" id="form3Example4cg"
                                           class="form-control form-control-lg" />
                                       <label class="form-label" for="form3Example4cg">Password</label>
-                                      @if (session()->get('error.password'))
-                                          <div class="password-message">
+                                      @if (session()->get('error'))
+                                          <div class="error-validation">
                                             {{ session()->get('error') }}
                                           </div>
                                       @endif
@@ -37,7 +32,7 @@
                                   </div>
                                   <p class="text-center text-muted mt-5 mb-0">Don't have an account yet? <a
                                           href="/registration" class="fw-bold text-body"><u>Register here</u></a></p>
-                              </form>
+                                </form>
                           </div>
                       </div>
                   </div>

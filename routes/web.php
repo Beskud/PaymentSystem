@@ -1,7 +1,6 @@
 <?php
 use App\Http\Middleware\ValidationUserMethod;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PayPalController;
 
 /*
@@ -21,7 +20,7 @@ Route::middleware([\App\Http\Middleware\RegistrationMiddleware::class])->group(f
     Route::get('/authorization', 'ControllerAuthorization@index');
     Route::post('/authorization-action', 'ControllerAuthorization@authorization');
     Route::get('/registration', 'ControllerRegistration@index');
-    Route::post('/registration-action', 'ControllerRegistration@registration');
+    Route::post('/registration-action', 'ControllerRegistration@registration')->middleware(ValidationUserMethod::class);
 });
 Route::middleware([\App\Http\Middleware\AuthenticateMiddleware::class])->group(function () {
     Route::get('/main', 'ControllerMain@index')->name('main');

@@ -1,6 +1,6 @@
 <?php
-namespace App\Http\Middleware;
 
+namespace App\Http\Middleware;
 use Closure;
 
 class ValidationUserMethod
@@ -12,8 +12,7 @@ class ValidationUserMethod
         $username = $request->username;
         $password = $request->password;
         $confirmation_password = $request->confirmation_password;
-   
-
+        
         if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match('/^[A-Za-z0-9.@]{1,100}$/', $email)) {
             session()->flash('error.email', 'Invalid email format');
             return redirect()->back();
